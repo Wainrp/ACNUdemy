@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAI UDEMY SHOPPING CENTER</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+   
+
+ 
+</head>
+  
+
+<body>
+   
+    <div class="products-men" style="background-color: black">
+        <h1 style="color: red">Jersey's Shopping Center </h1>
+        
+    </div>
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <img src="icons/mesque.jpg" style="width:100%">
+        <div class="text">The motto Mes Que Un Club is a Catalan phrase and it means 'more than a club'.
+
+          Barcelona's official website proudly declares: "We are more than a team of great stars, we are more than a stadium full of dreams, we are more than the goals we’ve scored and more than the trophies that we’ve won throughout our history."</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <img src="icons/todo.jpg" style="width:100%">
+        <div class="text">To Dare is to Do does not take a rocket scientist to understand the meaning behind the words however, a step back in time is needed to understand why the motto was chosen.</div>
+      </div>
+      
+      
+      
+      <a class="prev" onclick="plusSlides(-1)"><</a>
+      <a class="next" onclick="plusSlides(1)">></a>
+      
+      </div>
+      <br>
+      
+     
+      
+      <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      </script>
+
+
+
+   
+  
+    <div class="products-list">
+        
+        <div class="products">
+            <!-- render porducts here -->
+        </div>
+        <div class="cart">
+            <div class="cart-header">
+                <div class="column1">Item</div>
+                <div class="column2">Unit price</div>
+                <div class="column3">Units</div>
+            </div>
+            <div class="cart-items">
+                <!-- render cart items here -->
+            </div>
+            
+        </div>
+    </div>
+    <div class="cart-footer" >
+      <div class="subtotal" ></div>
+    </div>
+
+  <div class="buy" onclick="myFunction()">
+    <h1 style="color:white">BUY NOW</h1>
+  </div>
+  <script>
+    function myFunction() {
+      alert('Your purchase is Completed !!!! xD');
+    }
+</script>
+  
+  
+
+
+
+    
+    <script>
+        const porductsListEl = document.querySelector(".products-list");
+        const seeMoreBtn = document.querySelector(".see-more-btn");
+
+        seeMoreBtn.addEventListener('click', () => {
+            porductsListEl.scrollIntoView({behavior: "smooth"})
+        })
+    </script>
+
+    <script src="./products.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
